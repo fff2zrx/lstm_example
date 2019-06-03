@@ -1,2 +1,4 @@
 # lstm_example
-based on  keras, predict value and label
+based on keras
+predict value:regression
+predict label:classification
