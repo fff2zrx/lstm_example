@@ -18,4 +18,5 @@ changes of loss during training(训练中loss的变化）
 changes of accuracy during training(训练中acuracy的变化）  
   
     
-- more detailed contents will be in codes or [my blog](https://blog.csdn.net/qq_38412868/article/details/88688581)
+- more detailed contents will be in codes or [my blog](https://blog.csdn.net/qq_38412868/article/details/88688581)  
+更多细节详见代码或者我的博客
