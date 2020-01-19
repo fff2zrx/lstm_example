@@ -4,11 +4,11 @@
 
 - data_file（数据文件）:`5class.xlsx`  
 
-- code1_file（代码文件1）:`label_lstm_keras.py`  
+- code1_file（代码文件1）:`number_lstm_keras.py`  
 predict value: for **regression** question  
 预测数值-**回归问题**  
 
-- code2_file（代码文件2）:`number_lstm_keras.py`  
+- code2_file（代码文件2）:`label_lstm_keras.py`  
 predict label: for **classification** question  
 预测标签-**分类问题**  
 
