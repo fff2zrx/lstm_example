@@ -15,4 +15,7 @@ predict label: for **classification** question
 ![](https://img-blog.csdnimg.cn/20190320145213663.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4NDEyODY4,size_16,color_FFFFFF,t_70)  
 changes of loss during training(训练中loss的变化）
 ![](https://img-blog.csdnimg.cn/20190320145317911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4NDEyODY4,size_16,color_FFFFFF,t_70)  
-changes of accuracy during training(训练中acuracy的变化）
+changes of accuracy during training(训练中acuracy的变化）  
+  
+    
+- more detailed contents will be in codes or [my blog](https://blog.csdn.net/qq_38412868/article/details/88688581)
