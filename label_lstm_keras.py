@@ -16,7 +16,7 @@ import openpyxl
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 # ---- 数据导入 ----
-data = pd.read_excel("datas/5class.xlsx")
+data = pd.read_excel("5class.xlsx")
 origin_data_x = data.iloc[:,2:].values
 origin_data_y=data.iloc[:,1].values
 index = [j for j in range(len(origin_data_x))]
