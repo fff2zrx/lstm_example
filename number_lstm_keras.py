@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#利用lstm预测
 __author__ = 'fff_zrx'
 import pandas as pd
 import numpy as np
@@ -19,7 +20,7 @@ import openpyxl
 from keras import losses
 from sklearn.decomposition import PCA
 # ---- 数据导入 ----
-data = pd.read_excel("5class.xlsx")
+data = pd.read_excel("./datas/traindata.xlsx")
 origin_data_x = data.iloc[:,2:].values
 origin_data_y=data.iloc[:,0].values
 index = [j for j in range(len(origin_data_x))]
@@ -103,34 +104,34 @@ model.compile(loss=["mae"], optimizer='adam',metrics=[mape])
 # filepath='model_trained.h5'
 # # checkpoint = ModelCheckpoint(filepath, monitor='val_loss', verbose=1, save_best_only=True, mode='min')
 history = model.fit(train_x, train_y, epochs=epochs, batch_size=batch_size,  validation_data=[test_x, test_y],verbose=2, shuffle=True)
-#save model after train
-model.save('model_trained.h5')
+#save model after train保存模型文件
+model.save('./models/lstm_model_number.h5')
 # test the model
 print("Testdatasets mape:",calculate_mape(test_x,test_y))
 print("Testdatasets mae:",calculate_mae(test_x,test_y))
-#plot history
-# pyplot.figure(1)
-# pyplot.plot(history.history['loss'], label='train')
-# pyplot.plot(history.history['val_loss'], label='test')
-# pyplot.legend()
-# pyplot.xlabel('Epochs', fontsize = 12)
-# pyplot.ylabel('Loss', fontsize = 12)
-# pyplot.savefig("Loss.png")
-# pyplot.show()
-# pyplot.figure(2)
-# pyplot.plot(history.history['mape'], label='train')
-# pyplot.plot(history.history['val_mape'], label='test')
-# pyplot.legend()
-# pyplot.xlabel('Epochs', fontsize = 12)
-# pyplot.ylabel('Mape', fontsize = 12)
-# pyplot.savefig("Mape.png")
-# pyplot.show()
+##plot history画出训练过程
+pyplot.figure(1)
+pyplot.plot(history.history['loss'], label='train')
+pyplot.plot(history.history['val_loss'], label='test')
+pyplot.legend()
+pyplot.xlabel('Epochs', fontsize = 12)
+pyplot.ylabel('Loss', fontsize = 12)
+pyplot.savefig("Loss.png")
+pyplot.show()
+pyplot.figure(2)
+pyplot.plot(history.history['mape'], label='train')
+pyplot.plot(history.history['val_mape'], label='test')
+pyplot.legend()
+pyplot.xlabel('Epochs', fontsize = 12)
+pyplot.ylabel('Mape', fontsize = 12)
+pyplot.savefig("Mape.png")
+pyplot.show()
 # deletes the existing model
 # del model
 # load model
-# model=load_model('model_trained.h5')
+# model=load_model('./models/lstm_model_number.h5')
 #---- 待预测数据导入 ----
-data = pd.read_excel("class1_group90.xlsx")
+data = pd.read_excel("./datas/testdata_for_number.xlsx")
 x = data.iloc[:, 4:].values
 x = scaler.transform(x)
 x = x.reshape([-1, 11, 5])
@@ -154,5 +155,5 @@ y=y.reshape([-1,])
 analysis=[list(y),list(predict)]
 mat=np.mat(analysis)
 mat=mat.T
-np.savetxt('group90_error_lstm.csv',mat,delimiter=',')
+np.savetxt('./datas/test_data_number_output.csv',mat,delimiter=',')
 print("写入预测数据成功！")
