@@ -14,13 +14,10 @@ predict value: for **regression** question
 predict label: for **classification** question  
 预测标签：**分类问题**  
 
-<<<<<<< HEAD
 ## 对训练过程可视化
 
 以**分类**问题为例
-=======
 对训练过程可视化以**分类**问题为例
->>>>>>> 55d3dc26ab625fa6bf2934e62b9a525a29360388
 
 ![](https://img-blog.csdnimg.cn/20190320145213663.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4NDEyODY4,size_16,color_FFFFFF,t_70)  
 changes of loss during training(训练中loss的变化）
